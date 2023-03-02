@@ -12,23 +12,23 @@ import * as PostActions from './store/post/post.actions';
 })
 export class AppComponent { 
 
-  message$: Observable<string> = this.store.select('message');
-  post$: Observable<Post> = this.store.select('post');
+  // message$: Observable<string> = this.store.select('message');
+  // post$: Observable<Post> = this.store.select('post');
 
-  public text: string;
+ // public text: string;
 
-  constructor(private store: Store<AppState>) { }
+  // constructor(private store: Store<AppState>) { }
 
-  setMessage(type: string): void {
+  /* setMessage(type: string): void {
     this.store.dispatch({type: type});
-  }
+  }*/
 
-  editText() {
+  /* editText() {
     this.store.dispatch(new PostActions.EditText(this.text));
   }
 
   vote(type: string):void {
     this.store.dispatch(new PostActions[type]());
-  }
+  } */
 
 }

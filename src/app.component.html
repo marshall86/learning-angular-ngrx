@@ -1,28 +1,6 @@
-<div *ngIf="message$ | async">
-  {{message$ | async}}
-
-  <div>
-    <button (click)="setMessage('FRENCH')">French</button>
-    <button (click)="setMessage('SPANISH')">Spanish</button>
-    <button (click)="setMessage('RESET')">Reset</button>
-  </div>
-</div>
-
-<hr />
-
 <div>
-  Posts: 
-  <div *ngIf="post$ | async as p">
-    <h2>Text: {{ p.text }}</h2>
-    <h4>Votes: {{ p.likes }}</h4>
-
-    <button (click)="vote('Upvote')">Upvote</button>
-    <button (click)="vote('Downvote')">Downvote</button>
-    <button (click)="vote('Reset')">Reset</button>
-
-  </div>
-
-  <input type="text" [(ngModel)]="text">
-  <button (click)="editText()">Change Title</button>
-
+  <button [routerLink]="''">Messages</button>
+  <button [routerLink]="'posts'">Posts</button>
 </div>
+
+<router-outlet></router-outlet>
