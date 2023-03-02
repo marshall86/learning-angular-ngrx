@@ -1,17 +1,25 @@
 <div>
-  Posts: 
+  <h1>Posts: </h1>
   
   <div *ngIf="post$ | async as p">
-    <h2>Text: {{ p.text }}</h2>
-    <h4>Votes: {{ p.likes }}</h4>
+    <div>
+      <h2>Title: {{ p.text }}</h2>
+      <h3>Votes: {{ p.likes }}</h3>
+    </div>
 
-    <button (click)="vote('Upvote')">Upvote</button>
-    <button (click)="vote('Downvote')">Downvote</button>
-    <button (click)="vote('Reset')">Reset</button>
-
+    <ul>
+      <li>
+        <button (click)="vote('Upvote')">Upvote</button>
+      </li>
+      <li>
+        <button (click)="vote('Downvote')">Downvote</button>
+      </li>
+      <li>
+        <button (click)="vote('Reset')">Reset</button>
+      </li>
+    </ul>
   </div>
 
   <input type="text" [(ngModel)]="text">
   <button (click)="editText()">Change Title</button>
-
 </div>

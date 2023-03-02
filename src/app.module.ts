@@ -1,26 +1,26 @@
-import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+
 import { StoreModule } from "@ngrx/store";
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { postReducer } from "./store/post/post.reducer";
-import { simpleReducer } from "./store/simple/simple.reducer";
+// import { postReducer } from "./store/post/post.reducer";
+// import { messageReducer } from "./store/message/message.reducer";
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      message: simpleReducer,
+    /* StoreModule.forRoot({
+      message: messageReducer,
       post: postReducer
-    })
+    })*/
+    StoreModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot()
   ]
 })
 export class AppModule { }

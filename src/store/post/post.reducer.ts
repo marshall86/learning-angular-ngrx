@@ -1,3 +1,4 @@
+import { createFeature} from '@ngrx/store';
 import { Post } from '../../interfaces/post.model';
 import * as PostActions from './post.actions';
 
@@ -19,7 +20,6 @@ export function postReducer(state: Post = defaultState, action: Action) {
         return newState(state, {text: action.payload});
 
       case PostActions.UPVOTE:
-      
         return newState(state, {likes: state.likes+1});
 
       case PostActions.DOWNVOTE:
@@ -34,3 +34,10 @@ export function postReducer(state: Post = defaultState, action: Action) {
     }
 
 }
+
+//////
+
+export const postFeature = createFeature({
+  name: 'post',
+  reducer: postReducer
+});

@@ -1,4 +1,4 @@
-import { Action } from "@ngrx/store";
+import { Action, createAction } from "@ngrx/store";
 
 export const EDIT_TEXT = '[POST] Edit';
 export const UPVOTE = '[POST] Upvote';
