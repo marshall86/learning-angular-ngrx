@@ -1,9 +1,4 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Book } from "../../interfaces/books.model";
+import { createFeatureSelector } from '@ngrx/store';
+import { Book } from '../../interfaces/books.model';
 
-export const booksFeatureSelector = createFeatureSelector<Book[]>('books');
-
-export const booksSelector = createSelector(
-  booksFeatureSelector,
-  (booksState: Book[]) => booksState
-);
+export const selectBooks = createFeatureSelector<Book[]>('books');

@@ -4,7 +4,6 @@ export const defaultMessageState: string = 'Hello World!';
 
 export function messageReducer(state: string = defaultMessageState, action: Action) {
 
-  console.log('messageReducer ', action.type, state);
   switch(action.type) {
 
     case 'SPANISH':

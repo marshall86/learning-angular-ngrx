@@ -1,15 +1,21 @@
-import { createAction, props } from "@ngrx/store";
-import { Book } from "../../interfaces/books.model";
+import { createAction, props } from '@ngrx/store';
+import { Book } from '../../interfaces/books.model';
 
-export const GET_BOOKS_LIST = '[Books] get list';
-export const BOOKS_API_SUCESS = '[Books] API success';
-export const BOOKS_API_FAILURE = '[Books] API failure';
+export enum BooksAPI {
+  LOAD = '[Books API] --- Call API',
+  SUCCESS = '[Books API] Fetch API Success',
+  FAILURE = '[Books API] Fetch API Failure'
+};
 
-export const getBooksListAction = createAction(GET_BOOKS_LIST);
+export const invokeBooksAPI = createAction(
+  BooksAPI.LOAD
+);
 
-export const bookFetchAPISuccessAction = createAction(
-  BOOKS_API_SUCESS,
+export const booksFetchAPISuccess = createAction(
+  BooksAPI.SUCCESS,
   props<{ books: Book[] }>()
 );
 
-export const bookFetchAPIFailureAction = createAction(BOOKS_API_FAILURE);
+export const booksFetchAPIFailure = createAction(
+  BooksAPI.FAILURE
+);

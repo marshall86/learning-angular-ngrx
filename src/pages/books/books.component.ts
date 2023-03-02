@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 
 import { AppState } from '../../interfaces/app.model';
 import { Book } from '../../interfaces/books.model';
-import { getBooksListAction } from '../../store/books/books.actions';
+import { invokeBooksAPI } from '../../store/books/books.actions';
+import { selectBooks } from '../../store/books/books.selectors';
 
 @Component({
   selector: 'app-books',
@@ -13,11 +14,12 @@ import { getBooksListAction } from '../../store/books/books.actions';
 })
 export class BooksComponent implements OnInit {
 
-  books$: Observable<Book[]> = this.store.pipe(select('books'));
+  books$: Observable<readonly Book[]> = this.store.pipe(select(selectBooks));
+
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.store.dispatch(getBooksListAction());
+    this.store.dispatch(invokeBooksAPI());
   }
 
 }

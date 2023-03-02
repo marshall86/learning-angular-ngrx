@@ -15,7 +15,6 @@ const newState = (state, newData) => Object.assign({}, state, newData);
 // we use 'export function' instead of 'export const' because of production build
 export function postReducer(state: Post = defaultState, action: Action) {
 
-    console.log('postReducer ', action.type, state);
     switch(action.type) {
 
       case PostActions.EDIT_TEXT:

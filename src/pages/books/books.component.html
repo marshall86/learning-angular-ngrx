@@ -1,5 +1,14 @@
-<p>
-books works!
+<div *ngIf="books$ | async as books">
+	<ul *ngFor="let book of books">
+		<li>
+      <h2>{{book.volumeInfo.title}}</h2>
+      <img [src]='book.volumeInfo?.imageLinks?.thumbnail'>
+      <h3>Author: {{book.volumeInfo.authors}}</h3>
+      <h4>Publisher: {{book.volumeInfo.publisher}}</h4>
+      <h4>Published Date: {{book.volumeInfo.publishedDate}}</h4>
+      <p>{{book.volumeInfo.description}}</p>
 
-{{books$ | async | json}}
-</p>
+      <h5>Categories: {{book.volumeInfo.categories}}</h5>
+    </li>
+  </ul>
+</div>
