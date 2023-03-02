@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostsComponent } from './posts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PostsRoutingModule } from './posts-routing.module';
 import { StoreModule } from '@ngrx/store';
+
+import { PostComponent } from './post.component';
+import { PostRoutingModule } from './post-routing.module';
 import { postFeature } from '../../store/post/post.reducer';
 
 @NgModule({
@@ -11,11 +12,11 @@ import { postFeature } from '../../store/post/post.reducer';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    PostsRoutingModule,
+    PostRoutingModule,
     StoreModule.forFeature(postFeature)
   ],
   declarations: [
-    PostsComponent
+    PostComponent
   ]
 })
-export class PostsModule { }
+export class PostModule { }

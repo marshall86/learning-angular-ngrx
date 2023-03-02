@@ -23,7 +23,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
       message: messageReducer,
       post: postReducer
     })*/
-    StoreModule.forRoot([]),
+    StoreModule.forRoot({}),
     StoreRouterConnectingModule.forRoot()
   ]
 })
