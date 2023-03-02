@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'messages',
     loadChildren: () => import('./pages/translations/translations.module').then(m => m.TranslationsModule),
   },
   {
@@ -12,8 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/posts/posts.module').then(m=> m.PostsModule)
   },
   { 
-    path: '**', 
-    redirectTo: '' 
+    path: '' ,
+    loadChildren: () => import('./pages/translations/translations.module').then(m => m.TranslationsModule),
   }
 ];
 
