@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: 'messages',
-    loadChildren: () => import('./pages/translations/translations.module').then(m => m.TranslationsModule),
+    loadChildren: () => import('./pages/message/message.module').then(m => m.MessageModule),
   },
   {
     path: 'post',
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   { 
     path: '' ,
-    loadChildren: () => import('./pages/translations/translations.module').then(m => m.TranslationsModule),
+    loadChildren: () => import('./pages/message/message.module').then(m => m.MessageModule),
   }
 ];
 

@@ -6,11 +6,11 @@ import { AppState } from '../../interfaces/app.model';
 import { messageSelector } from '../../store/message/post.selectors';
 
 @Component({
-  selector: 'app-translations',
-  templateUrl: './translations.component.html',
-  styleUrls: ['./translations.component.css']
+  selector: 'app-message',
+  templateUrl: './message.component.html',
+  styleUrls: ['./message.component.css']
 })
-export class TranslationsComponent {
+export class MessageComponent {
 
   message$: Observable<string> = this.store.pipe(select(messageSelector));
 

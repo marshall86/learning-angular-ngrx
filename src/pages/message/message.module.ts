@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslationsComponent } from './translations.component';
+import { MessageComponent } from './message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslationsRoutingModule } from './translations-routing.module';
+import { MessageRoutingModule } from './message-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { messageFeature } from '../../store/message/message.reducer';
 
@@ -11,11 +11,11 @@ import { messageFeature } from '../../store/message/message.reducer';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    TranslationsRoutingModule,
+    MessageRoutingModule,
     StoreModule.forFeature(messageFeature)
   ],
   declarations: [
-    TranslationsComponent
+    MessageComponent
   ]
 })
-export class TranslationsModule { }
+export class MessageModule { }
