@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
+// import { Store } from "@ngrx/store";
+// import { Observable } from "rxjs";
 
-import { AppState } from "./interfaces/app.model";
-import { Post } from "./interfaces/post.model";
-import * as PostActions from './store/post/post.actions';
+// import { AppState } from "./interfaces/app.model";
+// import { Post } from "./interfaces/post.model";
+// import * as PostActions from './store/post/post.actions';
 
 @Component({
   selector: 'app-root',
