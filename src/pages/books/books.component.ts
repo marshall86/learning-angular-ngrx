@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 import { AppState } from '../../interfaces/app.model';
 import { BookAPIInterface } from '../../interfaces/books.model';
-import { invokeBooksAPI } from '../../store/books/books.actions';
-import { selectBooks } from '../../store/books/books.selectors';
+import { invokeBooksAPI } from './store/books.actions';
+import { selectBooks } from './store/books.selectors';
 
 @Component({
   selector: 'app-books',

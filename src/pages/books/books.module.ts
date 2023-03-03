@@ -5,11 +5,15 @@ import { BooksRoutingModule } from './books-routing.module';
 import { BooksListService } from '../../services/books.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import { BookEffects } from '../../store/books/books.effects';
+import { BookEffects } from './store/books.effects';
 import { StoreModule } from '@ngrx/store';
-import { booksReducer } from '../../store/books/books.reducer';
+import { booksReducer } from './store/books.reducer';
 import { LetModule } from '@ngrx/component';
-import { logger } from '../../store/meta.reducers';
+// import { logger } from '../../store/meta.reducers';
+
+/*, {
+      metaReducers: [logger]
+    }*/
 
 @NgModule({
   imports: [
@@ -17,9 +21,7 @@ import { logger } from '../../store/meta.reducers';
     LetModule,
     HttpClientModule,
     BooksRoutingModule,
-    StoreModule.forFeature('books', booksReducer, {
-      metaReducers: [logger]
-    }),
+    StoreModule.forFeature('books', booksReducer),
     EffectsModule.forFeature(BookEffects)
   ],
   declarations: [

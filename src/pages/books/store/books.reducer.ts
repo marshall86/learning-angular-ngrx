@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { BookAPIInterface } from '../../interfaces/books.model';
+import { BookAPIInterface } from '../../../interfaces/books.model';
 import { booksFetchAPIFailure, booksFetchAPISuccess } from './books.actions';
 
 export const initialState: BookAPIInterface = {

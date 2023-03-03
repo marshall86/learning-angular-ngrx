@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { PostComponent } from './post.component';
 import { PostRoutingModule } from './post-routing.module';
-import { postFeature } from '../../store/post/post.reducer';
+import { postFeature } from './store/post.reducer';
 import { LetModule } from '@ngrx/component';
 
 @NgModule({

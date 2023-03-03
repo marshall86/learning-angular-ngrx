@@ -4,9 +4,9 @@ import { catchError, map, mergeMap, of, withLatestFrom } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 
 import { booksFetchAPIFailure, booksFetchAPISuccess, invokeBooksAPI } from './books.actions';
-import { BooksListService } from '../../services/books.service';
+import { BooksListService } from '../../../services/books.service';
 import { selectBooks } from './books.selectors';
-import { Book } from '../../interfaces/books.model';
+import { Book } from '../../../interfaces/books.model';
 
 @Injectable()
 export class BookEffects {

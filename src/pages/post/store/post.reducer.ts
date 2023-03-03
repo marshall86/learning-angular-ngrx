@@ -1,5 +1,5 @@
 import { createFeature} from '@ngrx/store';
-import { Post } from '../../interfaces/post.model';
+import { Post } from '../../../interfaces/post.model';
 import * as PostActions from './post.actions';
 
 export type Action = PostActions.All;

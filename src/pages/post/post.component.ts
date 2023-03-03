@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 import { Post } from '../../interfaces/post.model';
 import { AppState } from '../../interfaces/app.model';
-import * as PostActions from '../../store/post/post.actions';
-import { postSelector } from '../../store/post/post.selectors';
+import * as PostActions from './store/post.actions';
+import { postSelector } from './store/post.selectors';
 
 @Component({
   selector: 'app-post',

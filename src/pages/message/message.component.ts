@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { AppState } from '../../interfaces/app.model';
-import { messageSelector } from '../../store/message/message.selectors';
+import { messageSelector } from './store/message.selectors';
 
 @Component({
   selector: 'app-message',
