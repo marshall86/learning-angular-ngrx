@@ -10,11 +10,11 @@ export const initialState: BookAPIInterface = {
 
 export const booksReducer = createReducer(
   initialState,
-  on(booksFetchAPISuccess, (_state, { isLoading, books }) => ({
+  on(booksFetchAPISuccess, (_state, { isLoading, books }): BookAPIInterface => ({
     isLoading,
     books
   })),
-  on(booksFetchAPIFailure, (state, { isLoading}) => ({
+  on(booksFetchAPIFailure, (state, { isLoading}): BookAPIInterface => ({
     ...state,
     isLoading
   }))
