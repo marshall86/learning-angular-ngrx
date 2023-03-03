@@ -1,4 +1,5 @@
 import { createFeatureSelector } from '@ngrx/store';
-import { Book } from '../../interfaces/books.model';
 
-export const selectBooks = createFeatureSelector<Book[]>('books');
+import { BookAPIInterface } from '../../interfaces/books.model';
+
+export const selectBooks = createFeatureSelector<BookAPIInterface>('books');

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Book } from '../../interfaces/books.model';
+import { BookAPIInterface } from '../../interfaces/books.model';
 
 export enum BooksAPI {
   LOAD = '[Books API] --- Call API',
@@ -13,9 +13,10 @@ export const invokeBooksAPI = createAction(
 
 export const booksFetchAPISuccess = createAction(
   BooksAPI.SUCCESS,
-  props<{ books: Book[] }>()
+  props<BookAPIInterface>()
 );
 
 export const booksFetchAPIFailure = createAction(
-  BooksAPI.FAILURE
+  BooksAPI.FAILURE,
+  props<{isLoading: boolean}>()
 );

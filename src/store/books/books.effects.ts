@@ -6,6 +6,7 @@ import { select, Store } from '@ngrx/store';
 import { booksFetchAPIFailure, booksFetchAPISuccess, invokeBooksAPI } from './books.actions';
 import { BooksListService } from '../../services/books.service';
 import { selectBooks } from './books.selectors';
+import { Book } from '../../interfaces/books.model';
 
 @Injectable()
 export class BookEffects {
@@ -23,8 +24,8 @@ export class BookEffects {
           return this.booksService
             .getBooks()
             .pipe(
-              map((data) => booksFetchAPISuccess({ books: data })),
-              catchError((err) => of(booksFetchAPIFailure()))
+              map((data: Book[]) => booksFetchAPISuccess({ isLoading: false, books: data })),
+              catchError(() => of(booksFetchAPIFailure({isLoading: false})))
             );
         })
       )

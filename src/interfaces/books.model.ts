@@ -1,3 +1,7 @@
+export interface BookAPIInterface {
+  isLoading: boolean;
+  books: Book[]
+}
 
 export interface Book {
   kind:        string;
