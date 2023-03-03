@@ -9,6 +9,7 @@ import { BookEffects } from '../../store/books/books.effects';
 import { StoreModule } from '@ngrx/store';
 import { booksReducer } from '../../store/books/books.reducer';
 import { LetModule } from '@ngrx/component';
+import { logger } from '../../store/meta.reducers';
 
 @NgModule({
   imports: [
@@ -16,7 +17,9 @@ import { LetModule } from '@ngrx/component';
     LetModule,
     HttpClientModule,
     BooksRoutingModule,
-    StoreModule.forFeature('books', booksReducer),
+    StoreModule.forFeature('books', booksReducer, {
+      metaReducers: [logger]
+    }),
     EffectsModule.forFeature(BookEffects)
   ],
   declarations: [
