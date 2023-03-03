@@ -8,10 +8,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from '../../store/books/books.effects';
 import { StoreModule } from '@ngrx/store';
 import { booksReducer } from '../../store/books/books.reducer';
+import { LetModule } from '@ngrx/component';
 
 @NgModule({
   imports: [
     CommonModule,
+    LetModule,
     HttpClientModule,
     BooksRoutingModule,
     StoreModule.forFeature('books', booksReducer),

@@ -1,4 +1,4 @@
-<div *ngIf="books$ | async as booksList">
+<div *ngrxLet ="books$ as booksList">
   <ng-container *ngIf="booksList.isLoading; else showList">
     <div class="lds-ripple"><div></div><div></div></div>
   </ng-container>
