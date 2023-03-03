@@ -11,6 +11,7 @@ import { AppComponent } from "./app.component";
 // import { messageReducer } from "./store/message/message.reducer";
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { logger } from "./store/meta.reducers";
 
 @NgModule({
   bootstrap: [AppComponent],
